@@ -7,11 +7,13 @@ const configg = require('../../config/default.json');
 require('express-async-errors');
 const uuid = require('uuid');
 const AWS = require('aws-sdk');
+require('dotenv').config();
+
 
 const s3 = new AWS.S3(
   { 
-    accessKeyId:'AKIA3GW5TNQ7R7O4MVF7',
-    secretAccessKey:'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',
+    accessKeyId:process.env.ACCESS_KEY_ID,
+    secretAccessKey:process.env.SECRET_ACCESS_KEY,
   }
 );
 //authu
@@ -97,12 +99,12 @@ router.post('/capnhatanh',async (req,res)=>{
      ContentType:`image/${type}`
    }
    
-   const duongdanurl = 'https://detaizalo.s3.ap-southeast-1.amazonaws.com/'
+   
    const entity={
        "ma_tk":req.session.AuthUser.ma_tk,
     "ten_tk":req.body.thongtin_update.tentk,
     "sdt":req.body.thongtin_update.sdt,
-    "url":`${duongdanurl}${filePath}`,
+    "url":`${process.env.URL_S3}${filePath}`,
     "email":req.body.thongtin_update.email
 }
     await dangkymodel.patch(entity);
@@ -526,11 +528,11 @@ router.post('/kichban',async (req,res)=>{
       console.log('successfully uploaded the image!');
     }
    })
-   const duongdanurl = 'https://detaizalo.s3.ap-southeast-1.amazonaws.com/'
+   
    const entity={
     "id_nhom":req.body.thongtin_update.id_nhom,
     "tennhom":req.body.thongtin_update.tennhom,
-    "urlnhom":`${duongdanurl}${filePath}`,
+    "urlnhom":`${process.env.URL_S3}${filePath}`,
     "id_chuphong":req.body.thongtin_update.id_chuphong
     }
     console.log(entity);

@@ -7,6 +7,8 @@ const sessionStore = new MySQLStore(config.mysql);
 const res = require('express/lib/response');
 const body_parset = require('body-parser');
 const { symlink } = require('fs');
+require('dotenv').config();
+
 //config folfer
 app.use(express.static('./css'));
 app.use(body_parset.json(
@@ -38,8 +40,8 @@ const AWS = require('aws-sdk');
 
 const s3 = new AWS.S3(
   { 
-    accessKeyId:'AKIA3GW5TNQ7R7O4MVF7',
-    secretAccessKey:'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',
+    accessKeyId:process.env.ACCESS_KEY_ID,
+    secretAccessKey:process.env.SECRET_ACCESS_KEY,
   }
 );
 //const bucket = 'detaizalo';
@@ -94,11 +96,11 @@ io.on('connection',(socket)=>{
         console.log('successfully uploaded the image!');
       }
      })
-     const duongdanurl = 'https://detaizalo.s3.ap-southeast-1.amazonaws.com/'
+     
         const entity={
           "id_tk":thongtin.id_my,
           "id_nguoinhan":thongtin.id_banbe,
-          "noidung":`${duongdanurl}${filePath}`,
+          "noidung":`${process.env.URL_S3}${filePath}`,
           "thoigian":thongtin.tg,
           "loaitinnhan":'hinhanh',
           "trangthai":'hoạt động'
@@ -139,7 +141,7 @@ io.on('connection',(socket)=>{
          console.log('successfully uploaded the image!');
        }
       })
-      const duongdanurl = 'https://detaizalo.s3.ap-southeast-1.amazonaws.com/'
+      
 
     //  const timidboitennhom= await table_nhom.single(thongtin.tennhom);
     //  let id_nhom = timidboitennhom.map(a => a.id_nhom);
@@ -147,7 +149,7 @@ io.on('connection',(socket)=>{
         const entity={
           "id_tk":thongtin.my_id,
           "id_nhom":thongtin.id_nhom,
-          "noidung":`${duongdanurl}${filePath}`,
+          "noidung":`${process.env.URL_S3}${filePath}`,
           "thoigian":thongtin.thoigian_database,
           "loaitinnhan":'hinhanh',
           "trangthai":'hoạt động'
@@ -239,12 +241,12 @@ io.on('connection',(socket)=>{
          console.log('successfully uploaded the FILE!');
        }
       })
-      const duongdanurl = 'https://detaizalo.s3.ap-southeast-1.amazonaws.com/'
+      
  
         const entity={
             "id_tk":data.id_my,
             "id_nguoinhan":data.id_banbe,
-            "noidung":`${duongdanurl};${data.tenfile};${filePath}`,
+            "noidung":`${process.env.URL_S3};${data.tenfile};${filePath}`,
             "thoigian":data.tg,
             "loaitinnhan":'file',
             "trangthai":'hoạt động'
@@ -282,11 +284,11 @@ io.on('connection',(socket)=>{
         console.log('successfully uploaded the FILE!');
       }
      })
-     const duongdanurl = 'https://detaizalo.s3.ap-southeast-1.amazonaws.com/'
+     
      const entity={
       "id_tk":thongtin.my_id,
       "id_nhom":thongtin.id_nhom,
-      "noidung":`${duongdanurl};${thongtin.tenfile};${filePath}`,
+      "noidung":`${process.env.URL_S3};${thongtin.tenfile};${filePath}`,
       "thoigian":thongtin.thoigian_database,
       "loaitinnhan":'file',
       "trangthai":'hoạt động'
@@ -332,11 +334,11 @@ io.on('connection',(socket)=>{
         console.log('successfully uploaded the image!');
       }
      })
-     const duongdanurl = 'https://detaizalo.s3.ap-southeast-1.amazonaws.com/'
+     
       const entity={
         "id_tk":data.id_my,
         "id_nguoinhan":data.id_banbe,
-        "noidung":`${duongdanurl}${filePath};${data.tenfile}`,
+        "noidung":`${process.env.URL_S3}${filePath};${data.tenfile}`,
         "thoigian":data.tg,
         "loaitinnhan":'video',
         "trangthai":'hoạt động'
@@ -373,11 +375,11 @@ io.on('connection',(socket)=>{
       console.log('successfully uploaded the FILE!');
     }
    })
-   const duongdanurl = 'https://detaizalo.s3.ap-southeast-1.amazonaws.com/'
+   
    const entity={
     "id_tk":thongtin.my_id,
     "id_nhom":thongtin.id_nhom,
-    "noidung":`${duongdanurl}${filePath};${thongtin.style}`,
+    "noidung":`${process.env.URL_S3}${filePath};${thongtin.style}`,
     "thoigian":thongtin.thoigian_database,
     "loaitinnhan":'video',
     "trangthai":'hoạt động'

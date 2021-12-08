@@ -21,7 +21,6 @@ module.exports={
         if(error){
           return reject(error);
         }
-
         resolve(results);
       });
     })
@@ -33,7 +32,6 @@ module.exports={
         if(error){
           return reject(error);
         }
-
         resolve(results);
       });
     })
