@@ -8,8 +8,6 @@ require('express-async-errors');
 const uuid = require('uuid');
 const AWS = require('aws-sdk');
 require('dotenv').config();
-
-
 const s3 = new AWS.S3(
   { 
     accessKeyId:process.env.ACCESS_KEY_ID,
