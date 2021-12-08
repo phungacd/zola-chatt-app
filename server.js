@@ -537,8 +537,8 @@ app.use('/',require('./router/login/dangnhap'));
 //app.get('/',(req,res)=>{
 //    return res.render('dangNhap');
 //})
-var port = process.env.PORT || 3000
 
-server.listen(port,()=>{
+
+server.listen(process.env.PORT || 3000,()=>{
     console.log('server running');
 })

@@ -1,7 +1,7 @@
 {
     "mysql":{
         "connectionLimit": 10,
-        "host":"zola-app.c84qjabbwvv0.ap-southeast-1.rds.amazonaws.com",
+        "host":"aay8nn2zvyuy7j.c84qjabbwvv0.ap-southeast-1.rds.amazonaws.com",
     "port":"3306",
     "user":"admin",
     "password":"123456789",
