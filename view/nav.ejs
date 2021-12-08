@@ -1,0 +1,139 @@
+<%if(lcIsAuthenticated) {%>
+        
+<div id="kt_header" class="header align-items-stretch">
+    <!--begin::Container-->
+    <div class="container-xxl d-flex align-items-stretch justify-content-between">
+        <!--begin::Logo-->
+         <div class="d-flex align-items-center flex-grow-1 flex-lg-grow-0 me-lg-15">
+            <a href="/chat">
+                <img alt="Logo" src="/sign-in/svg/logo.png" class="h-70px">
+            </a>
+        </div> 
+        <!--end::Logo-->
+        <!--begin::Wrapper-->
+        <div class="d-flex align-items-stretch justify-content-between flex-lg-grow-1">
+            <!--begin::Navbar-->
+            <!-- <div class="d-flex align-items-stretch" id="kt_header_nav">
+                <!--begin::Menu wrapper-->
+                <!-- <img src="/sign-in/svg/logo.png"> -->
+                <!--end::Menu wrapper-->
+            </div> 
+            <!--end::Navbar-->
+            <!--begin::Topbar-->
+            <div class="d-flex align-items-stretch justify-content-between flex-shrink-0">
+                <!--begin::Toolbar wrapper-->
+                <div class="d-flex align-items-stretch flex-shrink-0">
+
+                    <div class="d-flex align-items-center ms-1 ms-lg-3" id="kt_header_user_menu_toggle">
+                        <!--begin::Menu wrapper-->
+                        <div class="cursor-pointer symbol symbol-30px symbol-md-40px" data-kt-menu-trigger="click" data-kt-menu-attach="parent" data-kt-menu-placement="bottom-end">
+                            <div class="btn btn-icon btn-active-light-primary position-relative w-30px h-30px w-md-40px h-md-40px" id="kt_drawer_chat_toggle">
+                                <!--begin::Svg Icon | path: icons/duotune/communication/com012.svg-->
+                                <span class="svg-icon svg-icon-1">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-check" viewBox="0 0 16 16">
+                                        <path d="M6 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0zm4 8c0 1-1 1-1 1H1s-1 0-1-1 1-4 6-4 6 3 6 4zm-1-.004c-.001-.246-.154-.986-.832-1.664C9.516 10.68 8.289 10 6 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10z"/>
+                                        <path fill-rule="evenodd" d="M15.854 5.146a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 0 1 .708-.708L12.5 7.793l2.646-2.647a.5.5 0 0 1 .708 0z"/>
+                                      </svg>
+                                </span>
+                                <!--end::Svg Icon-->
+                                <span class="bullet bullet-dot bg-success h-6px w-6px position-absolute translate-middle top-0 start-50 animation-blink"></span>
+                            </div>
+                        </div>
+                        <!--begin::Menu-->
+                        <div id="menu_xacnhanbanbe" class="menu menu-sub menu-sub-dropdown menu-column menu-rounded menu-gray-800 menu-state-bg menu-state-primary fw-bold py-4 fs-6 w-275px" data-kt-menu="true" style="z-index: 105;position: fixed;inset: 0px 0px  auto auto;margin: 0px;transform: translate(-337px, 65px);width: 350px!important;">
+                            <!--begin::Menu item-->
+                            <div class="menu-item px-3  ">
+                                <!-- <div class="menu-content d-flex align-items-center px-3" > -->
+                                    <!--begin::Avatar-->
+                                    <div class="symbol symbol-50px me-5">
+                                       
+                                    </div>
+                                    <!--end::Avatar-->
+                                    <!--begin::Username-->
+                                    <div class="d-flex flex-column">
+                                        <div class="fw-bolder d-flex align-items-center fs-5">
+                                        </div>
+                                        <!-- <a href="#" class="fw-bold text-muted text-hover-primary fs-7"></a> -->
+                                    </div>
+                                    <div class="btn-group btn-group-sm" role="group" aria-label="...">
+                                        <!-- <button class="btn">
+                                            <i class="bi bi-check-circle text-primary fs-3" ></i>
+                                         </button><button class="btn">
+                                            <i class="bi bi-x text-danger fs-3" ></i>
+                                         </button> -->
+                                    </div>
+                                    <!--end::Username-->
+                                </div>
+                            </div>
+
+                        </div>
+                        <!--end::Menu-->
+                        <!--end::Menu wrapper-->
+                    </div>
+                    <div class="d-flex align-items-center ms-1 ms-lg-3" id="kt_header_user_menu_toggle">
+                        <!--begin::Menu wrapper-->
+                        <div class="cursor-pointer symbol symbol-30px symbol-md-40px" data-kt-menu-trigger="click" data-kt-menu-attach="parent" data-kt-menu-placement="bottom-end">
+                            <img src="<%=lcAtthorUser.url%>" alt="user">
+                        </div>
+                        <div class="fw-bolder d-flex align-items-center fs-5"><%=lcAtthorUser.ten_tk%>
+                        </div>
+                        <!--begin::Menu-->
+                        <div class="menu menu-sub menu-sub-dropdown menu-column menu-rounded menu-gray-800 menu-state-bg menu-state-primary fw-bold py-4 fs-6 w-275px" data-kt-menu="true">
+                            <!--begin::Menu item-->
+                            <div class="menu-item px-3 menu-content-custom">
+                                <div class="menu-content d-flex align-items-center px-31">
+                                    <!--begin::Avatar-->
+                                    <div class="symbol symbol-50px me-5">
+                                        <img alt="Logo" src="<%=lcAtthorUser.url%>">
+                                    </div>
+                                    <!--end::Avatar-->
+                                    <!--begin::Username-->
+                                    <div class="d-flex flex-column">
+                                        <div class="fw-bolder d-flex align-items-center fs-5"><%=lcAtthorUser.ten_tk%>
+                                        </div>
+                                        <a href="#" class="fw-bold text-muted text-hover-primary fs-7"><%=lcAtthorUser.email%></a>
+                                    </div>
+                                    <!--end::Username-->
+                                </div>
+                            </div>
+                            <!--end::Menu item-->
+                            <!--begin::Menu separator-->
+                            <div class="separator my-2"></div>
+                            <!--end::Menu separator-->
+                            <!--begin::Menu item-->
+                            <div class="menu-item px-5">
+                                <a href="/thongtin" class="menu-link px-5">Hồ Sơ của Tôi</a>
+                            </div>
+                            <!--end::Menu item-->
+                            <div class="separator my-2"></div>
+                            <!--end::Menu separator-->
+                            <div class="menu-item px-5 my-1">
+                                <a href="/suathongtin" class="menu-link px-5">Chỉnh Sửa Thông Tin</a>
+                            </div>
+                            <!--end::Menu item-->
+                            <!--begin::Menu item-->
+                            <div class="menu-item px-5">
+                                <a href="/" class="menu-link px-5">Đăng Xuất</a>
+                            </div>
+                            <!--end::Menu item-->
+                            <!--begin::Menu separator-->
+                        </div>
+                        <!--end::Menu-->
+                        <!--end::Menu wrapper-->
+                    </div>
+                    
+                    <!--end::User -->
+                    <!--begin::Heaeder menu toggle-->
+               
+                    <!--end::Heaeder menu toggle-->
+                </div>
+                
+                <!--end::Toolbar wrapper-->
+            </div>
+            <!--end::Topbar-->
+        </div>
+        <!--end::Wrapper-->
+    </div>
+    <!--end::Container-->
+</div>
+    <%}%>

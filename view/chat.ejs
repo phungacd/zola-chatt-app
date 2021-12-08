@@ -1,0 +1,708 @@
+<!DOCTYPE>
+<html>
+    <head>
+        <meta charset="UTF-8">
+         <link rel="stylesheet" href="/chat/stylebunder.css">
+         <!-- <link rel="stylesheet" href="/sign-in/style.bunder.css"> 
+        <link rel="stylesheet" href="/sign-in/plugins/plugins.bundle.css"> -->
+        <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" rel="stylesheet">  
+        <link rel="stylesheet" href="/chat/plugins.bundle.css">
+        <link rel="stylesheet" href="https://fontawesome.com/icons?d=gallery">
+        <link rel="stylesheet" href="/thongbao/thongbao.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.6.0/font/bootstrap-icons.css">
+    </head>
+    <body class="header-fixed header-tablet-and-mobile-fixed toolbar-enabled toolbar-fixed" style="--kt-toolbar-height:55px;--kt-toolbar-height-tablet-and-mobile:55px">
+    <!-- model tìm sđt -->
+    <div class="modal fade" id="kt_modal_users_search" tabindex="-1" style="display: none;" aria-hidden="true">
+        <!--begin::Modal dialog-->
+        <div class="modal-dialog modal-dialog-centered mw-650px">
+            <!--begin::Modal content-->
+            <div class="modal-content">
+                <!--begin::Modal header-->
+                <div class="modal-header pb-0 border-0 justify-content-end">
+                    <!--begin::Close-->
+                    <div class="btn btn-sm btn-icon btn-active-color-primary" data-bs-dismiss="modal">
+                        <!--begin::Svg Icon | path: icons/duotune/arrows/arr061.svg-->
+                        <span class="svg-icon svg-icon-1">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                <rect opacity="0.5" x="6" y="17.3137" width="16" height="2" rx="1" transform="rotate(-45 6 17.3137)" fill="black"></rect>
+                                <rect x="7.41422" y="6" width="16" height="2" rx="1" transform="rotate(45 7.41422 6)" fill="black"></rect>
+                            </svg>
+                        </span>
+                        <!--end::Svg Icon-->
+                    </div>
+                    <!--end::Close-->
+                </div>
+                <!--begin::Modal header-->
+                <!--begin::Modal body-->
+                <div id="" class=" modal-body scroll-y mx-5 mx-xl-18 pt-0 pb-15">
+                    <!--begin::Content-->
+                    <div class="text-center mb-13">
+                        <h1 class="mb-3">Search Users</h1>
+                        <div class="text-muted fw-bold fs-5">Invite Collaborators To Your Project</div>
+                    </div>
+                    <!--end::Content-->
+                    <!--begin::Search-->
+                    <div id="kt_modal_users_search_handler" data-kt-search-keypress="true" data-kt-search-min-length="2" data-kt-search-enter="enter" data-kt-search-layout="inline">
+                        <div class="row">
+                            <div class="col-sm-9 ">
+                                <form id="" class="w-100 position-relative mb-5" >
+                                    <!--begin::Hidden input(Added to disable form autocomplete)-->
+                                    
+                                    <!--end::Hidden input-->
+                                    <!--begin::Icon-->
+                                    <!--begin::Svg Icon | path: icons/duotune/general/gen021.svg-->
+                                    <span class="svg-icon svg-icon-2 svg-icon-lg-1 svg-icon-gray-500 position-absolute top-50 ms-5 translate-middle-y">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                            <rect opacity="0.5" x="17.0365" y="15.1223" width="8.15546" height="2" rx="1" transform="rotate(45 17.0365 15.1223)" fill="black"></rect>
+                                            <path d="M11 19C6.55556 19 3 15.4444 3 11C3 6.55556 6.55556 3 11 3C15.4444 3 19 6.55556 19 11C19 15.4444 15.4444 19 11 19ZM11 5C7.53333 5 5 7.53333 5 11C5 14.4667 7.53333 17 11 17C14.4667 17 17 14.4667 17 11C17 7.53333 14.4667 5 11 5Z" fill="black"></path>
+                                        </svg>
+                                    </span>
+                                    <!--end::Svg Icon-->
+                                    <!--end::Icon-->
+                                    <!--begin::Input-->
+                                
+                                    <input type="text" id="timkiem_enter" class="form-control form-control-solid px-15" name="search"  placeholder="Search by username, full name or email..." >
+                                    <!--end::Input-->
+                                    <!--begin::Spinner-->
+                                    <span class="position-absolute top-50 end-0 translate-middle-y lh-0 d-none me-5" data-kt-search-element="spinner">
+                                        <span class="spinner-border h-15px w-15px align-middle text-muted"></span>
+                                    </span>
+                                    <!--end::Spinner-->
+                                    <!--begin::Reset-->
+                                    <span class="btn btn-flush btn-active-color-primary position-absolute top-50 end-0 translate-middle-y lh-0 me-5 d-none" data-kt-search-element="clear">
+                                        <!--begin::Svg Icon | path: icons/duotune/arrows/arr061.svg-->
+                                        <span class="svg-icon svg-icon-2 svg-icon-lg-1 me-0">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                                <rect opacity="0.5" x="6" y="17.3137" width="16" height="2" rx="1" transform="rotate(-45 6 17.3137)" fill="black"></rect>
+                                                <rect x="7.41422" y="6" width="16" height="2" rx="1" transform="rotate(45 7.41422 6)" fill="black"></rect>
+                                            </svg>
+                                        </span>
+                                        <!--end::Svg Icon-->
+                                    </span>
+                                    <!--end::Reset-->
+                                </form>
+                              </div>
+                            <div class="col-2 mt-1">
+                                <button id="themban" type="submit" class="btn btn-primary btn-sm">Tìm</button>
+                                
+                              </div>
+                        </div>
+                        <!--begin::Form-->
+                      
+                        <!--end::Form-->
+                        <!--begin::Wrapper-->
+                        <div class="py-5">
+                            <!--begin::Suggestions-->
+                            <div data-kt-search-element="suggestions">
+                                <!--begin::Heading-->
+                                <h3 class="fw-bold mb-5">Recently searched:</h3>
+                                <!--end::Heading-->
+                                <!--begin::Users-->
+                                <div id="timkiemthanhcong" class="mh-375px scroll-y me-n7 pe-7">
+                                    <!--begin::User--> <style> 
+                                        button:hover {background-color: aqua;}</style>
+                                  
+                                    
+                                    <!--end::User-->
+                                </div>
+                                <!--end::Users-->
+                            </div>
+                            <!--end::Suggestions-->
+                            <!--begin::Results(add d-none to below element to hide the users list by default)-->
+                            <!--end::Empty-->
+                        </div>
+                        <!--end::Wrapper-->
+                    </div>
+                    <!--end::Search-->
+                </div>
+                <!--end::Modal body-->
+            </div>
+            <!--end::Modal content-->
+        </div>
+        <!--end::Modal dialog-->
+    </div>
+    <!-- model add ban -->
+    <div class="modal fade" id="kt_modal_invite_friends" tabindex="-1" data-select2-id="select2-data-kt_modal_invite_friends" style="display: none;" aria-hidden="true">
+        <!--begin::Modal dialog-->
+        <div class="modal-dialog mw-650px" data-select2-id="select2-data-125-4yy3">
+            <!--begin::Modal content-->
+            <div class="modal-content" data-select2-id="select2-data-124-n0nr">
+                <!--begin::Modal header-->
+                <div class="modal-header pb-0 border-0 justify-content-end">
+                    <!--begin::Close-->
+                    <div class="btn btn-sm btn-icon btn-active-color-primary" data-bs-dismiss="modal">
+                        <!--begin::Svg Icon | path: icons/duotune/arrows/arr061.svg-->
+                        <span class="svg-icon svg-icon-1">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                <rect opacity="0.5" x="6" y="17.3137" width="16" height="2" rx="1" transform="rotate(-45 6 17.3137)" fill="black"></rect>
+                                <rect x="7.41422" y="6" width="16" height="2" rx="1" transform="rotate(45 7.41422 6)" fill="black"></rect>
+                            </svg>
+                        </span>
+                        <!--end::Svg Icon-->
+                    </div>
+                    <!--end::Close-->
+                </div>
+                <!--begin::Modal header-->
+                <!--begin::Modal body-->
+                <div class="modal-body scroll-y mx-5 mx-xl-18 pt-0 pb-15" data-select2-id="select2-data-123-i6gf">
+                    <!--begin::Heading-->
+                    <div class="text-center mb-13">
+                        <!--begin::Title-->
+                        <h1 class="mb-3">Invite a Friend</h1>
+                        <!--end::Title-->
+                    </div>
+                    <!--end::Heading-->
+                    <!--begin::Google Contacts Invite-->
+                    <div class="d-flex flex-column mb-7 fv-row fv-plugins-icon-container">
+                        <!--begin::Label-->
+                        <label class="d-flex align-items-center fs-6 fw-bold form-label mb-2">
+                            <span class="required">Tên Group</span>
+                            
+                        </label>
+                        <!--end::Label-->
+                        <input id="ten_group" type="text" class="form-control form-control-solid" placeholder="" name="card_name" value="">
+                    <div class="fv-plugins-message-container invalid-feedback"></div></div>                    <!--begin::Textarea-->
+                    <!--end::Textarea-->
+                    <div class="d-flex flex-column mb-4 fv-row fv-plugins-icon-container">
+                        <form class="w-100 position-relative" autocomplete="off">
+                            <!--begin::Icon-->
+                            <!--begin::Svg Icon | path: icons/duotune/general/gen021.svg-->
+                            <span class="svg-icon svg-icon-2 svg-icon-lg-1 svg-icon-gray-500 position-absolute top-50 ms-5 translate-middle-y">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                    <rect opacity="0.5" x="17.0365" y="15.1223" width="8.15546" height="2" rx="1" transform="rotate(45 17.0365 15.1223)" fill="black"></rect>
+                                    <path d="M11 19C6.55556 19 3 15.4444 3 11C3 6.55556 6.55556 3 11 3C15.4444 3 19 6.55556 19 11C19 15.4444 15.4444 19 11 19ZM11 5C7.53333 5 5 7.53333 5 11C5 14.4667 7.53333 17 11 17C14.4667 17 17 14.4667 17 11C17 7.53333 14.4667 5 11 5Z" fill="black"></path>
+                                </svg>
+                            </span>
+                            <!--end::Svg Icon-->
+                            <!--end::Icon-->
+                            <!--begin::Input-->
+                    
+                            <input id="timbanaddgroup" type="text" class="form-control form-control-solid px-15" name="" value="" placeholder="Search by username or email...">
+                            <!--end::Input-->
+                            
+                        </form>
+                    </div>
+                    <tags id="tag" class="tagify tagify__input1 form-control form-control-solid" tabindex="-2">
+                        <!-- <tag title="Important" contenteditable="false" spellcheck="false" tabindex="-1" class="tagify__tag tagify--noAnim" value="Important"><x title="" class="tagify__tag__removeBtn" role="button" aria-label="remove tag"></x><div><span class="tagify__tag-text">Important</span></div></tag> -->
+                    </tags>
+                     
+                    <!--begin::Users-->
+                    <div  class="mb-10" data-select2-id="select2-data-122-1gto">
+                        <!--begin::Heading-->
+                        <div class="fs-6 fw-bold mb-2">Your Invitations</div>
+                        <!--end::Heading-->
+                        <!--begin::List-->
+                        <div id="form_ds_group" class="mh-300px scroll-y me-n7 pe-7" data-select2-id="select2-data-121-jf4y">
+                            <!--begin::User-->
+                            
+                            
+                            
+                        </div>
+                        <!--end::List-->
+                    </div>
+                    <!--end::Users-->
+                    <!--begin::Notice-->
+                    <div class="d-flex flex-stack">
+                        <!--begin::Label-->
+                        <div class="me-5 fw-bold">
+                        </div>
+                        <!--end::Label-->
+                        <!--begin::Switch-->
+                        <label class="form-check form-switch form-check-custom form-check-solid">
+                            <button id="tao_room" type="submit" class="btn btn-primary btn-sm">Tạo phòng</button>
+                        </label>
+                        <!--end::Switch-->
+                    </div>
+                    <!--end::Notice-->
+                </div>
+                <!--end::Modal body-->
+            </div>
+            <!--end::Modal content-->
+        </div>
+        <!--end::Modal dialog-->
+    </div>
+     <!-- model xem ban group -->
+     <div class="modal fade" id="kt_modal_select_users" tabindex="-1" aria-modal="true" role="dialog" style="display: none;">
+        <!--begin::Modal dialog-->
+        <div class="modal-dialog mw-700px">
+            <!--begin::Modal content-->
+            <div class="modal-content">
+                <!--begin::Modal header-->
+                <div class="modal-header pb-0 border-0 d-flex justify-content-end">
+                    <!--begin::Close-->
+                    <div class="btn btn-sm btn-icon btn-active-color-primary" data-bs-dismiss="modal">
+                        <!--begin::Svg Icon | path: icons/duotune/arrows/arr061.svg-->
+                        <span class="svg-icon svg-icon-1">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                <rect opacity="0.5" x="6" y="17.3137" width="16" height="2" rx="1" transform="rotate(-45 6 17.3137)" fill="black"></rect>
+                                <rect x="7.41422" y="6" width="16" height="2" rx="1" transform="rotate(45 7.41422 6)" fill="black"></rect>
+                            </svg>
+                        </span>
+                        <!--end::Svg Icon-->
+                    </div>
+                    <!--end::Close-->
+                </div>
+                <!--end::Modal header-->
+                <!--begin::Modal body-->
+                <div  class="modal-body scroll-y mx-5 mx-xl-10 pt-0 pb-15">
+                    <!--begin::Heading-->
+                    <div class="text-center mb-13">
+                        <!--begin::Title-->
+                        <h1 class="d-flex justify-content-center align-items-center mb-3">Select Users 
+                        <span id="tongtinnhan" class="badge badge-circle badge-secondary ms-3"></span></h1>
+                        <!--end::Title-->
+                    </div>
+                    <div id="modelloadtt"  class="mh-475px scroll-y me-n7 pe-7">
+                     </div>
+                    <!--end::Heading-->
+                    <!--begin::Users-->
+                    
+                        <!--begin::User-->
+                        <!--begin::User-->
+                        
+                        <!--end::User-->
+                    </div>
+                    <!--end::Users-->
+                </div>
+                <!--end::Modal Body-->
+            </div>
+            <!--end::Modal content-->
+        </div>
+        <!--end::Modal dialog-->
+    </div>
+     <!-- model load ds bạn them group -->
+     <div class="modal fade" id="modalmoiban" tabindex="-1" style="display: none;" aria-hidden="true">
+        <!--begin::Modal dialog-->
+        <div class="modal-dialog modal-dialog-centered mw-650px">
+            <!--begin::Modal content-->
+            <div class="modal-content">
+                <!--begin::Modal header-->
+                <div class="modal-header pb-0 border-0 justify-content-end">
+                    <!--begin::Close-->
+                    <div id="thoatmodal" class="btn btn-sm btn-icon btn-active-color-primary" data-bs-dismiss="modal">
+                        <!--begin::Svg Icon | path: icons/duotune/arrows/arr061.svg-->
+                        <span class="svg-icon svg-icon-1">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                <rect opacity="0.5" x="6" y="17.3137" width="16" height="2" rx="1" transform="rotate(-45 6 17.3137)" fill="black"></rect>
+                                <rect x="7.41422" y="6" width="16" height="2" rx="1" transform="rotate(45 7.41422 6)" fill="black"></rect>
+                            </svg>
+                        </span>
+                        <!--end::Svg Icon-->
+                    </div>
+                    <!--end::Close-->
+                </div>
+                <!--begin::Modal header-->
+                <!--begin::Modal body-->
+                <div id="" class=" modal-body scroll-y mx-5 mx-xl-18 pt-0 pb-15">
+                    <!--begin::Content-->
+                    <div class="text-center mb-13">
+                        <h1 class="mb-3">Search Users</h1>
+                        <div class="text-muted fw-bold fs-5">Invite Collaborators To Your Project</div>
+                    </div>
+                    <!--end::Content-->
+                    <!--begin::Search-->
+                    <div id="loadbanbechuathemnhom" data-kt-search-keypress="true" data-kt-search-min-length="2" data-kt-search-enter="enter" data-kt-search-layout="inline">
+                        <div class="row">
+                            <div class="col-sm-11 ">
+                                <form id="" class="w-100 position-relative mb-5" >
+                                    <!--begin::Hidden input(Added to disable form autocomplete)-->
+                                    
+                                    <!--end::Hidden input-->
+                                    <!--begin::Icon-->
+                                    <!--begin::Svg Icon | path: icons/duotune/general/gen021.svg-->
+                                    <span class="svg-icon svg-icon-2 svg-icon-lg-1 svg-icon-gray-500 position-absolute top-50 ms-5 translate-middle-y">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                            <rect opacity="0.5" x="17.0365" y="15.1223" width="8.15546" height="2" rx="1" transform="rotate(45 17.0365 15.1223)" fill="black"></rect>
+                                            <path d="M11 19C6.55556 19 3 15.4444 3 11C3 6.55556 6.55556 3 11 3C15.4444 3 19 6.55556 19 11C19 15.4444 15.4444 19 11 19ZM11 5C7.53333 5 5 7.53333 5 11C5 14.4667 7.53333 17 11 17C14.4667 17 17 14.4667 17 11C17 7.53333 14.4667 5 11 5Z" fill="black"></path>
+                                        </svg>
+                                    </span>
+                                    <!--end::Svg Icon-->
+                                    <!--end::Icon-->
+                                    <!--begin::Input-->
+                                
+                                    <input type="text" id="timkiem_enter1" class="form-control form-control-solid px-15" name="search"  placeholder="Search by username, full name or email..." >
+                                    <!--end::Input-->
+                                    <!--begin::Spinner-->
+                                    <span class="position-absolute top-50 end-0 translate-middle-y lh-0 d-none me-5" data-kt-search-element="spinner">
+                                        <span class="spinner-border h-15px w-15px align-middle text-muted"></span>
+                                    </span>
+                                    <!--end::Spinner-->
+                                    <!--begin::Reset-->
+                                    <span class="btn btn-flush btn-active-color-primary position-absolute top-50 end-0 translate-middle-y lh-0 me-5 d-none" data-kt-search-element="clear">
+                                        <!--begin::Svg Icon | path: icons/duotune/arrows/arr061.svg-->
+                                        <span class="svg-icon svg-icon-2 svg-icon-lg-1 me-0">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                                <rect opacity="0.5" x="6" y="17.3137" width="16" height="2" rx="1" transform="rotate(-45 6 17.3137)" fill="black"></rect>
+                                                <rect x="7.41422" y="6" width="16" height="2" rx="1" transform="rotate(45 7.41422 6)" fill="black"></rect>
+                                            </svg>
+                                        </span>
+                                        <!--end::Svg Icon-->
+                                    </span>
+                                    <!--end::Reset-->
+                                </form>
+                              </div>
+                        </div>
+                        <!--begin::Form-->
+                      
+                        <!--end::Form-->
+                        <!--begin::Wrapper-->
+                        <div class="py-5">
+                            <!--begin::Suggestions-->
+                            <div data-kt-search-element="suggestions">
+                                <!--begin::Heading-->
+                                <h3 class="fw-bold mb-5">Recently searched:</h3>
+                                <!--end::Heading-->
+                                <!--begin::Users-->
+                                <div id="dsbanchuathemgroup" class="mh-375px scroll-y me-n7 pe-7">
+                                    <!--begin::User--> 
+                                   
+                                    
+                                    <!--end::User-->
+                                </div>
+                                <!--end::Users-->
+                            </div>
+                            <!--end::Suggestions-->
+                            <!--begin::Results(add d-none to below element to hide the users list by default)-->
+                            <!--end::Empty-->
+                        </div>
+                        <!--end::Wrapper-->
+                    </div>
+                    <!--end::Search-->
+                </div>
+                <!--end::Modal body-->
+            </div>
+            <!--end::Modal content-->
+        </div>
+        <!--end::Modal dialog-->
+    </div>
+    <!-- model load ds bạn them group -->
+    <div class="modal fade" id="modalkichban" tabindex="-1" style="display: none;" aria-hidden="true">
+        <!--begin::Modal dialog-->
+        <div class="modal-dialog modal-dialog-centered mw-650px">
+            <!--begin::Modal content-->
+            <div class="modal-content">
+                <!--begin::Modal header-->
+                <div class="modal-header pb-0 border-0 justify-content-end">
+                    <!--begin::Close-->
+                    <div id="id_kichban" class="btn btn-sm btn-icon btn-active-color-primary" data-bs-dismiss="modal">
+                        <!--begin::Svg Icon | path: icons/duotune/arrows/arr061.svg-->
+                        <span class="svg-icon svg-icon-1">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                <rect opacity="0.5" x="6" y="17.3137" width="16" height="2" rx="1" transform="rotate(-45 6 17.3137)" fill="black"></rect>
+                                <rect x="7.41422" y="6" width="16" height="2" rx="1" transform="rotate(45 7.41422 6)" fill="black"></rect>
+                            </svg>
+                        </span>
+                        <!--end::Svg Icon-->
+                    </div>
+                    <!--end::Close-->
+                </div>
+                <!--begin::Modal header-->
+                <!--begin::Modal body-->
+                <div id="" class=" modal-body scroll-y mx-5 mx-xl-18 pt-0 pb-15">
+                    <!--begin::Content-->
+                    <div class="text-center mb-13">
+                        <h1 class="mb-3">Search Users</h1>
+                        <div class="text-muted fw-bold fs-5">Invite Collaborators To Your Project</div>
+                    </div>
+                    <!--end::Content-->
+                    <!--begin::Search-->
+                    <div id="" data-kt-search-keypress="true" data-kt-search-min-length="2" data-kt-search-enter="enter" data-kt-search-layout="inline">
+                        <div class="row">
+                            <div class="col-sm-11 ">
+                                <form id="" class="w-100 position-relative mb-5" >
+                                    <!--begin::Hidden input(Added to disable form autocomplete)-->
+                                    
+                                    <!--end::Hidden input-->
+                                    <!--begin::Icon-->
+                                    <!--begin::Svg Icon | path: icons/duotune/general/gen021.svg-->
+                                    <span class="svg-icon svg-icon-2 svg-icon-lg-1 svg-icon-gray-500 position-absolute top-50 ms-5 translate-middle-y">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                            <rect opacity="0.5" x="17.0365" y="15.1223" width="8.15546" height="2" rx="1" transform="rotate(45 17.0365 15.1223)" fill="black"></rect>
+                                            <path d="M11 19C6.55556 19 3 15.4444 3 11C3 6.55556 6.55556 3 11 3C15.4444 3 19 6.55556 19 11C19 15.4444 15.4444 19 11 19ZM11 5C7.53333 5 5 7.53333 5 11C5 14.4667 7.53333 17 11 17C14.4667 17 17 14.4667 17 11C17 7.53333 14.4667 5 11 5Z" fill="black"></path>
+                                        </svg>
+                                    </span>
+                                    <!--end::Svg Icon-->
+                                    <!--end::Icon-->
+                                    <!--begin::Input-->
+                                
+                                    <input type="text" id="timkiemnguoikich" class="form-control form-control-solid px-15" name="search"  placeholder="Search by username, full name or email..." >
+                                    <!--end::Input-->
+                                    <!--begin::Spinner-->
+                                    <span class="position-absolute top-50 end-0 translate-middle-y lh-0 d-none me-5" data-kt-search-element="spinner">
+                                        <span class="spinner-border h-15px w-15px align-middle text-muted"></span>
+                                    </span>
+                                    <!--end::Spinner-->
+                                    <!--begin::Reset-->
+                                    <span class="btn btn-flush btn-active-color-primary position-absolute top-50 end-0 translate-middle-y lh-0 me-5 d-none" data-kt-search-element="clear">
+                                        <!--begin::Svg Icon | path: icons/duotune/arrows/arr061.svg-->
+                                        <span class="svg-icon svg-icon-2 svg-icon-lg-1 me-0">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                                <rect opacity="0.5" x="6" y="17.3137" width="16" height="2" rx="1" transform="rotate(-45 6 17.3137)" fill="black"></rect>
+                                                <rect x="7.41422" y="6" width="16" height="2" rx="1" transform="rotate(45 7.41422 6)" fill="black"></rect>
+                                            </svg>
+                                        </span>
+                                        <!--end::Svg Icon-->
+                                    </span>
+                                    <!--end::Reset-->
+                                </form>
+                              </div>
+                        </div>
+                        <!--begin::Form-->
+                      
+                        <!--end::Form-->
+                        <!--begin::Wrapper-->
+                        <div class="py-5">
+                            <!--begin::Suggestions-->
+                            <div data-kt-search-element="suggestions">
+                                <!--begin::Heading-->
+                                <h3 class="fw-bold mb-5">Recently searched:</h3>
+                                <!--end::Heading-->
+                                <!--begin::Users-->
+                                <div id="dsbanmuonkich" class="mh-375px scroll-y me-n7 pe-7">
+                                    <!--begin::User--> 
+                                    <!-- <style> 
+                                        button:hover {background-color: aqua;}</style> -->
+                                  
+                                    
+                                    <!--end::User-->
+                                </div>
+                                <!--end::Users-->
+                            </div>
+                            <!--end::Suggestions-->
+                            <!--begin::Results(add d-none to below element to hide the users list by default)-->
+                            <!--end::Empty-->
+                        </div>
+                        <!--end::Wrapper-->
+                    </div>
+                    <!--end::Search-->
+                </div>
+                <!--end::Modal body-->
+            </div>
+            <!--end::Modal content-->
+        </div>
+        <!--end::Modal dialog-->
+    </div>
+     <!-- sua anh group -->
+    <div class="modal fade" id="kt_modal_view_users" tabindex="-1" style="display: none;" aria-hidden="true">
+        <!--begin::Modal dialog-->
+        <div class="modal-dialog mw-650px">
+            <!--begin::Modal content-->
+            <div class="modal-content">
+                <!--begin::Modal header-->
+                <div class="modal-header pb-0 border-0 justify-content-end">
+                    <!--begin::Close-->
+                    <div class="btn btn-sm btn-icon btn-active-color-primary" data-bs-dismiss="modal">
+                        <!--begin::Svg Icon | path: icons/duotune/arrows/arr061.svg-->
+                        <span class="svg-icon svg-icon-1">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                <rect opacity="0.5" x="6" y="17.3137" width="16" height="2" rx="1" transform="rotate(-45 6 17.3137)" fill="black"></rect>
+                                <rect x="7.41422" y="6" width="16" height="2" rx="1" transform="rotate(45 7.41422 6)" fill="black"></rect>
+                            </svg>
+                        </span>
+                        <!--end::Svg Icon-->
+                    </div>
+                    <!--end::Close-->
+                </div>
+                <!--begin::Modal header-->
+                <!--begin::Modal body-->
+                <div class="modal-body scroll-y mx-5 mx-xl-18 pt-0 pb-15">
+                    <!--begin::Heading-->
+                    <div class="text-center mb-13">
+                        <!--begin::Title-->
+                        <h1 class="mb-3">Browse Users</h1>
+                        <!--end::Title-->
+                        <!--begin::Description-->
+                        <div class="text-muted fw-bold fs-5">If you need more info, please check out our 
+                        <a href="#" class="link-primary fw-bolder">Users Directory</a>.</div>
+                        <!--end::Description-->
+                    </div>
+                    <!--end::Heading-->
+                    <!--begin::Users-->
+                    
+                        <!--begin::List-->
+                        <div id="kt_account_settings_profile_details" class="collapse show">
+                            <!--begin::Form-->
+                            <form id="kt_account_profile_details_form" class="form fv-plugins-bootstrap5 fv-plugins-framework" novalidate="novalidate">
+                                <!--begin::Card body-->
+                                <div class="card-body border-top p-9">
+                                    <!--begin::Input group-->
+                                    <div class="row mb-6">
+                                        <!--begin::Label-->
+                                        <label class="col-lg-4 col-form-label fw-bold fs-6">Avatar</label>
+                                        <!--end::Label-->
+                                        <!--begin::Col-->
+                                        <div class="col-lg-8">
+                                            <!--begin::Image input-->
+                                            <div class="image-input image-input-outline" data-kt-image-input="true" style="background-image: url()">
+                                                <!--begin::Preview existing avatar-->
+                                                <div id="anhnhomchat" class="image-input-wrapper w-125px h-125px" style="background-image: url(/metronic8/demo1/assets/media/avatars/150-26.jpg)"></div>
+                                                <!--end::Preview existing avatar-->
+                                                <!--begin::Label-->
+                                                <label class="btn btn-icon btn-circle btn-active-color-primary w-25px h-25px bg-body shadow" data-kt-image-input-action="change" data-bs-toggle="tooltip" title="" data-bs-original-title="Change avatar">
+                                                    <i class="bi bi-pencil-fill fs-7"></i>
+                                                    <!--begin::Inputs-->
+                                                    <input id="layanh" type="file" name="avatar" accept=".png, .jpg, .jpeg">
+                                                    <input type="hidden" name="avatar_remove">
+                                                    <!--end::Inputs-->
+                                                </label>
+                                                <!--end::Label-->
+                                                <!--begin::Cancel-->
+                                                <span class="btn btn-icon btn-circle btn-active-color-primary w-25px h-25px bg-body shadow" data-kt-image-input-action="cancel" data-bs-toggle="tooltip" title="" data-bs-original-title="Cancel avatar">
+                                                    <i class="bi bi-x fs-2"></i>
+                                                </span>
+                                                <!--end::Cancel-->
+                                                <!--begin::Remove-->
+                                                <span class="btn btn-icon btn-circle btn-active-color-primary w-25px h-25px bg-body shadow" data-kt-image-input-action="remove" data-bs-toggle="tooltip" title="" data-bs-original-title="Remove avatar">
+                                                    <i class="bi bi-x fs-2"></i>
+                                                </span>
+                                                <!--end::Remove-->
+                                            </div>
+                                            <!--end::Image input-->
+                                            <!--begin::Hint-->
+                                            <div class="form-text">Allowed file types: png, jpg, jpeg.</div>
+                                            <!--end::Hint-->
+                                        </div>
+                                        <!--end::Col-->
+                                    </div>
+                    
+                                    <!--begin::Input group-->
+                                    <div class="row mb-6">
+                                        <!--begin::Label-->
+                                        <label  class="col-lg-4 col-form-label required fw-bold fs-6">Tên Nhóm</label>
+                                        <!--end::Label-->
+                                        <!--begin::Col-->
+                                        <div class="col-lg-8 fv-row fv-plugins-icon-container">
+                                            <input id="tennhomchat" type="text" name="company" class="form-control form-control-solid" placeholder="Company name" >
+                                        <div class="fv-plugins-message-container invalid-feedback"></div></div>
+                                        <!--end::Col-->
+                                    </div>
+                                    <!--end::Input group-->
+                                    <!--end::Input group-->
+                                </div>
+                                <!--end::Card body-->
+                                <!--begin::Actions-->
+                                <div class="card-footer d-flex justify-content-end py-6 px-9">
+                                    
+                                    <button type="submit" class="btn btn-primary" id="suathongtin">Save Changes</button>
+                                </div>
+                                <!--end::Actions-->
+                            <input type="hidden"><div></div></form>
+                            <!--end::Form-->
+                        </div>
+                        <!--end::List-->
+                  
+                    <!--end::Users-->
+                    <!--begin::Notice-->
+                    
+                    
+                </div>
+                <!--end::Modal body-->
+            </div>
+            <!--end::Modal content-->
+        </div>
+        <!--end::Modal dialog-->
+    </div>
+
+
+        <!--lay user-->
+        <input type="hidden" id="tk_guiketban" value="<%= lcAtthorUser.ma_tk %>" />
+     <input type="hidden" id="userr" value="<%= lcAtthorUser.ten_tk %>" />
+     <input type="hidden" id="url_nguoigui" value="<%= lcAtthorUser.url %>" />
+       <!--begin::header-->
+       <%- include('./nav.ejs')-%>
+        <!--end::header-->
+        <div class="post d-flex flex-column-fluid" id="kt_post">
+             <!--begin::Container-->
+        <div id="kt_content_container" class="container-xxl">
+                    <!--begin::Layout-->
+                    <div class="d-flex flex-column flex-lg-row">
+                        <!--begin::Sidebar-->
+                        <div class="flex-column flex-lg-row-auto w-100 w-lg-300px w-xl-400px mb-10 mb-lg-0">
+                            <!--begin::Contacts-->
+                            <div class="card card-flush">
+                                <!--begin::Card header-->
+                                <div class="d-flex bd-highlight">
+                                    <div class="p-2 flex-grow-1 bd-highlight mt-5">
+                                        <form class="w-100 position-relative" autocomplete="off">
+                                            <!--begin::Icon-->
+                                            <!--begin::Svg Icon | path: icons/duotune/general/gen021.svg-->
+                                            <span class="svg-icon svg-icon-2 svg-icon-lg-1 svg-icon-gray-500 position-absolute top-50 ms-5 translate-middle-y">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                                    <rect opacity="0.5" x="17.0365" y="15.1223" width="8.15546" height="2" rx="1" transform="rotate(45 17.0365 15.1223)" fill="black"></rect>
+                                                    <path d="M11 19C6.55556 19 3 15.4444 3 11C3 6.55556 6.55556 3 11 3C15.4444 3 19 6.55556 19 11C19 15.4444 15.4444 19 11 19ZM11 5C7.53333 5 5 7.53333 5 11C5 14.4667 7.53333 17 11 17C14.4667 17 17 14.4667 17 11C17 7.53333 14.4667 5 11 5Z" fill="black"></path>
+                                                </svg>
+                                            </span>
+                                            <!--end::Svg Icon-->
+                                            <!--end::Icon-->
+                                            <!--begin::Input-->
+                                    
+                                            <input id="timbanchat" type="text" class="form-control form-control-solid px-15" name="" value="" placeholder="Search by username or email...">
+                                            <!--end::Input-->
+                                            
+                                        </form>
+                                    </div>
+                                    <div class="p-2 bd-highlight mt-7">
+                                        <div class="btn-group btn-group-sm" role="group" aria-label="...">
+                                            <button class="btn">
+                                                <i class="bi bi-person-plus-fill" style="font-size: 1.5rem; color: black" data-bs-toggle="modal" data-bs-target="#kt_modal_users_search"></i>
+                                             </button><button class="btn">
+                                                <i class="bi bi-people-fill" style="font-size: 1.5rem; color: black" data-bs-toggle="modal" data-bs-target="#kt_modal_invite_friends"></i>
+                                             </button>
+                                        </div>             
+                                    </div> 
+                                  </div>
+                                <!--end::Card header-->
+                                <!--begin::Card body-->
+                                <div class="card-body1 carrd-body--custom pt-5" id="kt_chat_contacts_body">
+                                    <!--begin::List-->
+                                    
+                                   
+                                    <!--end::List-->
+                                </div>
+                                <h1 style="text-align: center;">Nhóm</h1>
+                                <div class="separator separator-dashed my-3"></div>
+                                <div class="card-body1 carrd-body--custom pt-5" id="kt_chat_contacts_body_group">
+                                    <!--begin::List-->
+                                </div>
+                                <!--end::Card body-->
+                            </div>
+                            <!--end::Contacts-->
+                        </div>
+                        <!--end::Sidebar-->
+                        <!--begin:mở hộp thoại chat-->
+                        <div class="flex-lg-row-fluid ms-lg-7 ms-xl-10" id="form_a" >
+                            <!--begin::Messenger-->
+                        </div>
+                        <!--begin::chat group-->
+                     
+                                <!--end::Card footer-->
+                </div>
+                
+                            <!--end::Messenger-->
+        </div>
+                    <!--end::Content-->
+                </div>
+                
+                <!--end::Layout-->
+                <!--begin::Modals-->
+                <!--begin::Modal - View Users-->
+                
+                <!--end::Modal - View Users-->
+                <!--begin::Modal - Users Search-->
+                
+                <!--end::Modal - Users Search-->
+                <!--end::Modals-->
+            
+            <!--end::Container-->
+        </div>
+        <script src="/sign-in/plugins/plugins.bundle.js"></script>
+        <script src="/sign-in/scripts.bundle.js"></script> 
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://code.jquery.com/jquery-3.6.0.js"></script>  
+        <script src="/socket.io/socket.io.js"></script>
+        <script src="/xuly.js"></script>
+        <script src="/thongbao/thongbao.css"></script>
+        
+    </body>
+</html>

@@ -1,0 +1,118 @@
+<!DOCTYPE>
+<html>
+    <head>
+        <link rel="stylesheet" href="/chat/stylebunder.css">
+        <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" rel="stylesheet">  
+        <link rel="stylesheet" href="/chat/plugins.bundle.css">
+        <link rel="stylesheet" href="https://fontawesome.com/icons?d=gallery">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.6.0/font/bootstrap-icons.css">
+    </head>
+    <body class="header-fixed header-tablet-and-mobile-fixed toolbar-enabled toolbar-fixed" style="--kt-toolbar-height:55px;--kt-toolbar-height-tablet-and-mobile:55px">
+       
+       <!--begin::header-->
+        <!--end::header-->
+        <div class="post d-flex flex-column-fluid" id="kt_post">
+
+            <%- include('./nav.ejs')-%>
+
+            <div class="content d-flex flex-column flex-column-fluid" id="kt_content">
+						
+						
+						
+                <!--begin::Post-->
+                <div class="post d-flex flex-column-fluid" id="kt_post">
+                    <!--begin::Container-->
+                    <div id="kt_content_container" class="container-xxl">
+                        <!--begin::Navbar-->
+                        <%- include('./thongtin-head.ejs')-%>
+                        <!--end::Navbar-->
+                        <!--begin::details View-->
+                        <div class="card mb-5 mb-xl-10" id="kt_profile_details_view">
+                            <!--begin::Card header-->
+                            <div class="card-header cursor-pointer">
+                                <!--begin::Card title-->
+                                <div class="card-title m-0">
+                                    <h3 class="fw-bolder m-0">Thông tin cá nhân</h3>
+                                </div>
+                                <!--end::Card title-->
+                                <!--begin::Action-->
+                                <a href="/suathongtin" class="btn btn-primary align-self-center">Sửa thông tin</a>
+                                <!--end::Action-->
+                            </div>
+                            <!--begin::Card header-->
+                            <!--begin::Card body-->
+                            <div class="card-body p-9 carrd-body--custom">
+                                <!--begin::Row-->
+                                <div class="row mb-7">
+                                    <!--begin::Label-->
+                                    <label class="col-lg-4 fw-bold text-muted">Tên người dùng</label>
+                                    <!--end::Label-->
+                                    <!--begin::Col-->
+                                    <div class="col-lg-8">
+                                        <span class="fw-bolder fs-6 text-gray-800"><%= lcAtthorUser.ten_tk %></span>
+                                    </div>
+                                    <!--end::Col-->
+                                </div>
+                                <!--end::Row-->
+                                
+                                
+                                
+                                <!--begin::Input group-->
+                                <div class="row mb-7">
+                                    <!--begin::Label-->
+                                    <label class="col-lg-4 fw-bold text-muted">Số điện thoại 
+                                    <!--end::Label-->
+                                    <!--begin::Col-->
+                                    <div class="col-lg-8 d-flex align-items-center">
+                                        <span class="fw-bolder fs-6 text-gray-800 me-2"><%= lcAtthorUser.sdt %></span>
+                                        
+                                    </div>
+                                    <!--end::Col-->
+                                </div>
+                                <!--end::Input group-->
+                                
+                                
+                                
+                                <!--begin::Input group-->
+                               
+                                <!--end::Input group-->
+                                <!--begin::Input group-->
+                                <div class="row mb-7">
+                                    <!--begin::Label-->
+                                    <label class="col-lg-4 fw-bold text-muted">Email</label>
+                                    <!--end::Label-->
+                                    <!--begin::Col-->
+                                    <div class="col-lg-8">
+                                        <span class="fw-bolder fs-6 text-gray-800"><%= lcAtthorUser.email %></span>
+                                    </div>
+                                    <!--end::Col-->
+                                </div>
+                                <!--end::Input group-->
+                                <!--begin::Input group-->
+                              
+                                <!--end::Input group-->
+                                
+                                
+                                
+                            </div>
+                            <!--end::Card body-->
+                        </div>
+                        
+                        
+                        <!--end::Row-->
+                    </div>
+                    <!--end::Container-->
+                </div>
+                <!--end::Post-->
+            </div>
+                       
+
+       
+               
+        </div>
+        <script src="/sign-in/plugins/plugins.bundle.js"></script>
+        <script src="/sign-in/scripts.bundle.js"></script> 
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>  
+    </body>
+</html>

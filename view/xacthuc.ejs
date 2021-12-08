@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="dangnhap" content="dangnhap">
+        <link rel="stylesheet" href="/sign-in/plugins/plugins.bundle.css">
+        <link rel="stylesheet" href="/sign-in/style.bundle.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.6.0/font/bootstrap-icons.css">
+       
+    </head>
+        <body id="kt_body" class="bg-body">
+		<!--begin::Main-->
+		<div class="d-flex flex-column flex-root">
+			<!--begin::Authentication - Sign-in -->
+			<div class="d-flex flex-column flex-lg-row flex-column-fluid">
+				<!--begin::Aside-->
+				<%- include('./asdie.ejs')-%>
+				<!--end::Aside-->
+				<!--begin::Body-->
+                <div class="d-flex flex-column flex-lg-row-fluid py-10">
+					<!--begin::Content-->
+					<div class="d-flex flex-center flex-column flex-column-fluid">
+						<!--begin::Wrapper-->
+						<div class="w-lg-600px p-10 p-lg-15 mx-auto">
+							<!--begin::Form-->
+							<form action="/xacthuc" method="post" enctype="multipart/form-data"  class="form w-100 mb-10" novalidate="novalidate" id="kt_sing_in_two_steps_form">
+								<!--begin::Icon-->
+								<div class="text-center mb-10">
+									<img alt="Logo" class="mh-125px" src="/sign-in/svg/smartphone.svg">
+								</div>
+								<!--end::Icon-->
+								<!--begin::Heading-->
+								<div class="text-center mb-10">
+									<!--begin::Title-->
+									<h1 class="text-dark mb-3">Xác Minh Tài Khoản</h1>
+									<!--end::Title-->
+									<!--begin::Sub-title-->
+									<div class="text-muted fw-bold fs-5 mb-5">Nhập Mã Xác Thực Đã Gửi Vào Số Điện Thoại</div>
+									<!--end::Sub-title-->
+									<!--begin::Mobile no-->
+									<div class="fw-bolder text-dark fs-3" id="4socuoi">*******0675</div>
+									
+									
+									<!--end::Mobile no-->
+								</div>
+								<!--end::Heading-->
+								<!--begin::Section-->
+								<div class="mb-10 px-md-10">
+									<!--begin::Label-->
+									<div class="fw-bolder text-start text-dark fs-6 mb-1 ms-1">Nhập Vào 6 Chữ Số Xác Thực</div>
+									<!--end::Label-->
+									<!--begin::Input group-->
+								
+									<div class="d-flex flex-wrap flex-stack">
+										<input type="text" data-inputmask="'mask': '9', 'placeholder': ''" maxlength="1" class="form-control form-control-solid h-60px w-60px fs-2qx text-center border-primary border-hover mx-1 my-2" value="" inputmode="text">
+										<input type="text" data-inputmask="'mask': '9', 'placeholder': ''" maxlength="1" class="form-control form-control-solid h-60px w-60px fs-2qx text-center border-primary border-hover mx-1 my-2" value="" inputmode="text">
+										<input type="text" data-inputmask="'mask': '9', 'placeholder': ''" maxlength="1" class="form-control form-control-solid h-60px w-60px fs-2qx text-center border-primary border-hover mx-1 my-2" value="" inputmode="text">
+										<input type="text" data-inputmask="'mask': '9', 'placeholder': ''" maxlength="1" class="form-control form-control-solid h-60px w-60px fs-2qx text-center border-primary border-hover mx-1 my-2" value="" inputmode="text">
+										<input type="text" data-inputmask="'mask': '9', 'placeholder': ''" maxlength="1" class="form-control form-control-solid h-60px w-60px fs-2qx text-center border-primary border-hover mx-1 my-2" value="" inputmode="text">
+										<input type="text" data-inputmask="'mask': '9', 'placeholder': ''" maxlength="1" class="form-control form-control-solid h-60px w-60px fs-2qx text-center border-primary border-hover mx-1 my-2" value="" inputmode="text">
+									</div>
+									<!--begin::Input group-->
+								</div>
+								<!--end::Section-->
+								<!--begin::Submit-->
+								<div class="d-flex flex-center">
+									
+									<button type="submit"  id="kt_sing_in_two_steps_submit" class="btn btn-lg btn-primary fw-bolder" >
+										<span class="indicator-label">Xác Nhận</span>
+										<span class="indicator-progress">Please wait... 
+										<span class="spinner-border spinner-border-sm align-middle ms-2"></span></span>
+									
+									</button>
+								</div>
+								<!--end::Submit-->
+							</form>
+							<!--end::Form-->
+							<!--begin::Notice-->
+							<div class="text-center fw-bold fs-5">
+								<span class="text-muted me-1">Bạn Không Nhận Được Mã Xác Thực ?</span>
+								<a href="#" class="link-primary fw-bolder fs-5 me-1">Gửi Lại</a>
+								
+							</div>
+							<!--end::Notice-->
+						</div>
+						<!--end::Wrapper-->
+					</div>
+					<!--end::Content-->
+					<!--begin::Footer-->
+					<!-- <div class="d-flex flex-center flex-wrap fs-6 p-5 pb-0"> -->
+						<!--begin::Links-->
+						<!-- <div class="d-flex flex-center fw-bold fs-6">
+							<a href="https://keenthemes.com" class="text-muted text-hover-primary px-2" target="_blank">About</a>
+							<a href="https://keenthemes.com/support" class="text-muted text-hover-primary px-2" target="_blank">Support</a>
+							<a href="https://1.envato.market/EA4JP" class="text-muted text-hover-primary px-2" target="_blank">Purchase</a>
+						</div> -->
+						<!--end::Links-->
+					<!-- </div> -->
+					<!--end::Footer-->
+				</div>
+                <!--end::Body-->
+			</div>
+			<!--end::Authentication - Sign-in-->
+		</div>
+		<!--end::Main-->
+		
+			<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script> 
+		
+		<script>var hostUrl = "/metronic8/demo1/assets/";</script>
+		<!--begin::Javascript-->
+		<!--begin::Global Javascript Bundle(used by all pages)-->
+		<script src="/sign-in/plugins/plugins.bundle.js"></script>
+		<script src="/sign-in/scripts.bundle.js"></script>
+		<!--end::Global Javascript Bundle-->
+		<!--begin::Page Custom Javascript(used by this page)-->
+		<script src="/sign-in/general.js"></script>
+		<!--end::Page Custom Javascript-->
+		<!--end::Javascript-->
+		<!--Begin::Google Tag Manager (noscript) -->
+	
+		<!--End::Google Tag Manager (noscript) -->
+		<!-- xu lý logic -->
+	<!--end::Body-->
+    </body>
+</html>

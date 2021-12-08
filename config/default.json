@@ -1,0 +1,13 @@
+{
+    "mysql":{
+        "connectionLimit": 10,
+        "host":"aaxsoqajl513q0.c84qjabbwvv0.ap-southeast-1.rds.amazonaws.com",
+    "port":"3306",
+    "user":"root",
+    "password":"123456789",
+    "database":"thongtinkhachhang"
+    },
+    "authentication":{
+        "saltRounds":4
+    }
+}
